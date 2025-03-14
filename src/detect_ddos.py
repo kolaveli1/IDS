@@ -17,11 +17,9 @@ def detect_ddos(packet):
         if time() - start_time > 1:
             for ip, count in packet_counts.items():
                 if count > DDOS_THRESHOLD:
-                    print(f"[ALERT] Muligt DDoS-angreb fra {ip} ({count} pakker/s)")
                     log_attack("DDoS", ip, f"{count} pakker/s")
             packet_counts.clear()
             start_time = time()
 
 
-print(f"IDS DDoS Detektor startet på {INTERFACE}...")
 sniff(prn=detect_ddos, store=0, iface=INTERFACE)
