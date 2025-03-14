@@ -34,8 +34,7 @@ A Man-in-the-Middle (MITM) attack occurs when an attacker spoofs ARP messages to
 Detection Logic:
     - Monitors ARP replies.
     - If an IP changes its MAC address frequently, it is flagged as a MITM attack.
-How to test it?
-Run arpspoof from another machine:
+To test it run arpspoof from another machine:
 arpspoof -i en0 -t <victimIP> <gatewayIP>
 - en0: Network interface (WIFI on macOS)
 - <victimIP> IP address of target machine
