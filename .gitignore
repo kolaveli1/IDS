@@ -1,0 +1,9 @@
+# Python cache & venv
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.env
+
+# SQLite database
+ids_logs.db
